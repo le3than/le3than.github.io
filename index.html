@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이우진 | AI 로봇 연구</title>
+    <title>Woo-Jin Lee | AI & Robotics Researcher</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.7; }
 
         /* Hero */
         .hero {
@@ -14,16 +14,24 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: #fff; text-align: center;
             padding: 2rem;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        .hero p { font-size: 1.2rem; opacity: 0.85; margin-bottom: 0.3rem; }
-        .hero .tagline { font-size: 1rem; opacity: 0.6; margin-top: 1rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.4rem; font-weight: 700; }
+        .hero .subtitle { font-size: 1.2rem; opacity: 0.85; margin-bottom: 0.3rem; }
+        .hero .tagline { font-size: 1rem; opacity: 0.55; margin-top: 1.2rem; font-style: italic; }
+        .hero .contact { margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7; }
+        .hero .contact a { color: #93c5fd; text-decoration: none; }
 
         /* Section */
-        section { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        section { max-width: 850px; margin: 0 auto; padding: 4rem 2rem; }
         h2 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid #1e3a5f; padding-bottom: 0.5rem; }
 
         /* About */
         .about p { font-size: 1.05rem; margin-bottom: 1rem; }
+
+        /* Timeline */
+        .timeline-item { display: flex; gap: 1.2rem; margin-bottom: 1.5rem; }
+        .timeline-year { min-width: 110px; font-weight: 600; color: #1e3a5f; font-size: 0.9rem; padding-top: 2px; }
+        .timeline-content h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+        .timeline-content p { font-size: 0.9rem; color: #666; }
 
         /* Skills */
         .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
@@ -32,13 +40,38 @@
             border-radius: 20px; font-size: 0.9rem; font-weight: 500;
         }
 
+        /* Awards */
+        .award-item { margin-bottom: 1rem; }
+        .award-item h3 { font-size: 1rem; color: #1e3a5f; }
+        .award-item p { font-size: 0.9rem; color: #666; }
+
         /* Projects */
         .project-card {
             background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
-            padding: 1.5rem; margin-bottom: 1.2rem;
+            padding: 1.5rem; margin-bottom: 1.5rem;
         }
-        .project-card h3 { color: #1e3a5f; margin-bottom: 0.5rem; }
-        .project-card p { font-size: 0.95rem; color: #555; }
+        .project-card h3 { color: #1e3a5f; margin-bottom: 0.4rem; font-size: 1.1rem; }
+        .project-card .role { font-size: 0.85rem; color: #1e3a5f; font-weight: 600; margin-bottom: 0.5rem; }
+        .project-card p { font-size: 0.93rem; color: #555; margin-bottom: 0.4rem; }
+        .project-card ul { font-size: 0.9rem; color: #555; padding-left: 1.2rem; margin-top: 0.4rem; }
+        .project-card li { margin-bottom: 0.3rem; }
+
+        /* Publications */
+        .pub-list { list-style: none; counter-reset: pub; }
+        .pub-list li {
+            counter-increment: pub; margin-bottom: 1rem; padding-left: 2rem;
+            position: relative; font-size: 0.92rem; color: #444;
+        }
+        .pub-list li::before {
+            content: "[" counter(pub) "]"; position: absolute; left: 0;
+            font-weight: 600; color: #1e3a5f;
+        }
+        .pub-list .venue { font-style: italic; color: #888; }
+
+        /* Research Interests */
+        .interest-item { margin-bottom: 1rem; }
+        .interest-item h3 { font-size: 1rem; color: #1e3a5f; margin-bottom: 0.2rem; }
+        .interest-item p { font-size: 0.9rem; color: #666; }
 
         /* Footer */
         footer {
@@ -51,54 +84,148 @@
 
 <div class="hero">
     <div>
-        <h1>이우진</h1>
-        <p>KIST-School 대학원 통합과정</p>
-        <p>AI 로봇 연구 — Natural Human-Robot Interaction (NHRI)</p>
-        <div class="tagline">사람과 자연스럽게 소통하는 로봇을 연구합니다</div>
+        <h1>이우진 (Woo-Jin Lee)</h1>
+        <p class="subtitle">PhD Student, AI & Robotics</p>
+        <p class="subtitle">Korea Institute of Science and Technology (KIST)</p>
+        <div class="tagline">불편함 없는 세상을 만드는 연구자</div>
+        <div class="contact">
+            <a href="mailto:le3than@kist.re.kr">le3than@kist.re.kr</a> &nbsp;|&nbsp;
+            <a href="https://github.com/le3than">GitHub</a>
+        </div>
     </div>
 </div>
 
 <section class="about">
     <h2>About</h2>
     <p>
-        KIST-School 대학원 통합과정에서 AI 기반 로봇 연구를 수행하고 있습니다.
-        사람과 로봇 간의 자연스러운 상호작용(Natural HRI)에 관심을 갖고,
-        보다 직관적이고 인간 친화적인 로봇 인터페이스를 탐구하고 있습니다.
+        KIST AI-로봇 연구소 통합과정 연구자입니다. HRI 환경에서 AI 기반 센서 데이터 처리 및 서비스 생성을 연구하며, 사람-로봇 상호작용이 보다 자연스럽고 지능적으로 이루어질 수 있도록 디테일에 집중하고 있습니다. 궁극적으로 사회적 약자를 돕는 로봇 기술 개발을 목표로 하고 있습니다.
     </p>
+</section>
+
+<section>
+    <h2>Education</h2>
+    <div class="timeline-item">
+        <div class="timeline-year">2024 – 현재</div>
+        <div class="timeline-content">
+            <h3>PhD Student, AI & Robotics</h3>
+            <p>UST / Korea Institute of Science and Technology</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Experience</h2>
+    <div class="timeline-item">
+        <div class="timeline-year">2024.03 – 현재</div>
+        <div class="timeline-content">
+            <h3>Student Researcher</h3>
+            <p>Center for Humanoid, Korea Institute of Science and Technology</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Awards</h2>
+    <div class="award-item">
+        <h3>Best Presentation Award (Excellence) — KIST School, UST Academic Workshop 2025</h3>
+        <p>Audio-Visual Input Preprocessing for Real-Time Active Speaker Detection</p>
+    </div>
+    <div class="award-item">
+        <h3>최우수논문상 — 한국동력기계공학회 2023</h3>
+        <p>Estimation of the Movable Position of the Robot based on the Object Recognition and GVG Update</p>
+    </div>
+    <div class="award-item">
+        <h3>우수논문상 — ICROS 2020</h3>
+        <p>제35회 제어로봇시스템학회 학술대회 — OpenPose와 휴머노이드로봇 모델을 이용한 보행 패턴 식별</p>
+    </div>
+    <div class="award-item">
+        <h3>우수상 — 제16회 부산미래과학자상</h3>
+        <p>부산미래과학자상 공모</p>
+    </div>
 </section>
 
 <section>
     <h2>Skills</h2>
     <div class="skills-grid">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">ROS</span>
-        <span class="skill-tag">Deep Learning</span>
-        <span class="skill-tag">Computer Vision</span>
-        <span class="skill-tag">NLP</span>
         <span class="skill-tag">Human-Robot Interaction</span>
-        <span class="skill-tag">PyTorch</span>
-        <span class="skill-tag">C++</span>
+        <span class="skill-tag">Active Speaker Detection</span>
+        <span class="skill-tag">Robot Navigation</span>
+        <span class="skill-tag">Semantic Mapping</span>
+        <span class="skill-tag">Computer Vision</span>
+        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">ROS</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Point Cloud</span>
+        <span class="skill-tag">SLAM</span>
     </div>
 </section>
 
 <section>
     <h2>Projects</h2>
+
     <div class="project-card">
-        <h3>Project 1</h3>
-        <p>프로젝트 설명을 여기에 작성하세요. 어떤 문제를 해결했는지, 어떤 기술을 사용했는지 간략히 소개합니다.</p>
+        <h3>원격지 상황정보를 제공하는 로봇의 환경인식 모듈 개발</h3>
+        <div class="role">담당: 환경 정보 인식 및 사용자-로봇 상호작용 보조 모듈 개발</div>
+        <p>뇌파(BCI) 사용자와 원격지 로봇 간의 유기적 상호작용을 위한 환경정보 전처리 모듈을 개발했습니다.</p>
+        <ul>
+            <li>객체 위치 기반 상호작용 수행 위치 자동 선정</li>
+            <li>공간에 semantic 레이블을 할당하여 공간-객체 관계 표시</li>
+            <li>실시간 장애물 인식을 반영한 이동 목적지 동적 갱신</li>
+        </ul>
     </div>
+
     <div class="project-card">
-        <h3>Project 2</h3>
-        <p>프로젝트 설명을 여기에 작성하세요.</p>
+        <h3>감염 격리병동 간호업무 보조 로봇 시스템 개발</h3>
+        <div class="role">담당: 대면 상호작용을 위한 로봇 위치 제어 기술 개발</div>
+        <p>감염 격리병동에서 텔레프레즌스 원격 진료, 의료물품 전달 및 수거를 수행하는 로봇 시스템을 개발했습니다.</p>
+        <ul>
+            <li>휴먼 위치 기반 이동 목적지 자동 생성</li>
+            <li>Depth 카메라 기반 장애물 인식 및 환경 반영</li>
+        </ul>
     </div>
+
     <div class="project-card">
-        <h3>Project 3</h3>
-        <p>프로젝트 설명을 여기에 작성하세요.</p>
+        <h3>사람의 일상행동을 이해하는 모바일 생활지원 로봇 개발</h3>
+        <div class="role">담당: 사회적 약자 대면 상호작용 및 일상 보조를 위한 로봇 위치 제어</div>
+        <p>QoLT 관점에서 사회적 약자를 지원하는 서비스 로봇의 지능 모듈을 개발했습니다.</p>
+        <ul>
+            <li>물건 전달 서비스를 위한 객체 위치 기반 로봇 위치 제어</li>
+            <li>대면 상호작용을 위한 휴먼 위치 기반 로봇 위치 제어</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Publications</h2>
+    <ol class="pub-list">
+        <li>로봇 적용을 위한 실시간 발화자 검지 모델 및 성능 분석 <span class="venue">— KRoC 2026, poster</span></li>
+        <li>Audio-Visual Input Preprocessing for Real-Time Active Speaker Detection <span class="venue">— RO-MAN 2025, poster</span></li>
+        <li>영상 및 오디오 데이터 기반 실시간 발화자 검지 <span class="venue">— KRoC 2025, poster</span></li>
+        <li>Destination automatic renewal process for location-based robot errand <span class="venue">— MDPI Applied Sciences, 2024</span></li>
+        <li>Automated Indoor Environment Mapping using CAD Drawings <span class="venue">— UR 2023, poster</span></li>
+        <li>Semi-automated map generation using space segmentation and GVG for robot navigation <span class="venue">— AETA 2022, oral</span></li>
+        <li>Automated Space Segmentation and Semantic Mapping <span class="venue">— UR 2022, poster</span></li>
+        <li>3차원 물체인식과 하이브리드 세선화 기법을 이용한 이동로봇의 최적위치 추정 <span class="venue">— JKIICE, 2021</span></li>
+        <li>Estimation of optimal moving target of mobile robots by using a topological map update <span class="venue">— ICCAS 2021, poster</span></li>
+        <li>GVG와 3차원 물체인식을 통한 토폴로지컬 지도의 생성 <span class="venue">— KIICE 2020, oral</span></li>
+        <li>OpenPose와 휴머노이드로봇 모델을 이용한 보행 패턴 식별 <span class="venue">— ICROS 2020</span></li>
+    </ol>
+</section>
+
+<section>
+    <h2>Research Interests</h2>
+    <div class="interest-item">
+        <h3>로봇 운용 환경 인식 및 관리</h3>
+        <p>모바일 로봇의 서비스 수행을 위한 환경 데이터 인식·전처리 및 환경 데이터 연계 로봇 제어</p>
+    </div>
+    <div class="interest-item">
+        <h3>사회적 문제 해결을 위한 로봇 개발</h3>
+        <p>취약 계층을 대상으로 하는 서비스 수행 로봇 개발</p>
     </div>
 </section>
 
 <footer>
-    <p><a href="https://github.com/le3than">GitHub</a> &nbsp;|&nbsp; <a href="mailto:le3than@gmail.com">Email</a></p>
+    <p><a href="https://github.com/le3than">GitHub</a> &nbsp;|&nbsp; <a href="mailto:le3than@kist.re.kr">Email</a></p>
 </footer>
 
 </body>
